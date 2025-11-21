@@ -206,26 +206,17 @@ public class ARTapInput : MonoBehaviour
         // Enable/Disable the AR Image Manager component
         UpdateARImageManagerState();
     }
-    
-    /// <summary>
-    /// Toggle capture on/off
-    /// </summary>
+
     public void ToggleCapture()
     {
         SetCaptureEnabled(!captureEnabled);
     }
     
-    /// <summary>
-    /// Check if capture is currently enabled
-    /// </summary>
     public bool IsCaptureEnabled()
     {
         return captureEnabled;
     }
     
-    /// <summary>
-    /// Called when UI toggle changes
-    /// </summary>
     private void OnToggleChanged(bool value)
     {
         captureEnabled = value;
@@ -234,9 +225,6 @@ public class ARTapInput : MonoBehaviour
         UpdateARImageManagerState();
     }
     
-    /// <summary>
-    /// Check if a screen position is within an exclusion zone
-    /// </summary>
     private bool IsInExclusionZone(Vector2 screenPosition)
     {
         // Get screen dimensions
@@ -278,10 +266,6 @@ public class ARTapInput : MonoBehaviour
         return false;
     }
     
-    /// <summary>
-    /// Public method for other scripts to check if a tap should be allowed
-    /// Call this from your character placement script!
-    /// </summary>
     public bool IsTapAllowed(Vector2 screenPosition)
     {
         // Check exclusion zones
@@ -299,9 +283,6 @@ public class ARTapInput : MonoBehaviour
         return true;
     }
     
-    /// <summary>
-    /// Public method to check just the exclusion zone (for external scripts)
-    /// </summary>
     public bool IsPositionInExclusionZone(Vector2 screenPosition)
     {
         return enableExclusionZones && IsInExclusionZone(screenPosition);

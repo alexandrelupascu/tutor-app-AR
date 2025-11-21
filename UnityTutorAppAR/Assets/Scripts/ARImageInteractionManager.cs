@@ -139,10 +139,6 @@ public class ARImageInteractionManager : MonoBehaviour
         }
     }
     
-    /// <summary>
-    /// Called when a valid world position is detected
-    /// Override this or subscribe to events for custom behavior
-    /// </summary>
     protected virtual void OnWorldPositionDetected(Vector3 worldPosition)
     {
         Debug.Log($"✓ World position detected: {worldPosition}");
@@ -177,9 +173,7 @@ public class ARImageInteractionManager : MonoBehaviour
         StartCoroutine(WaitForMovementThenPoint(worldPosition));
     }
     
-    /// <summary>
     /// Wait for character to finish moving, then play pointing animation
-    /// </summary>
     private System.Collections.IEnumerator WaitForMovementThenPoint(Vector3 errorPosition)
     {
         // Wait until character finishes moving
@@ -217,47 +211,28 @@ public class ARImageInteractionManager : MonoBehaviour
             Debug.Log("Pointing complete, character returned to idle");
     }
     
-    /// <summary>
     /// Called when raycast doesn't hit any AR plane
-    /// </summary>
     protected virtual void OnRaycastMiss()
     {
-        Debug.LogWarning("× No AR plane was hit by the raycast.");
+        Debug.LogWarning("No AR plane was hit by the raycast.");
         
         // TODO: Handle miss scenario
-        // Examples:
-        // - Show user feedback "Please scan more surfaces"
-        // - Retry logic
-        // - Fallback behavior
     }
     
-    /// <summary>
     /// Called when no error is detected in the equation (or API fails)
-    /// </summary>
     protected virtual void OnNoErrorDetected()
     {
-        Debug.Log("○ No error detected in equation (or API returned zero position).");
+        Debug.Log("No error detected in equation (or API returned zero position).");
         
         // TODO: Handle no error scenario
-        // Examples:
-        // - Show "Equation is correct!" message
-        // - Play success animation
-        // - Return to main menu
     }
     
-    /// <summary>
-    /// Called when an error occurs during processing
-    /// </summary>
+    // Called when an error occurs during processing
     protected virtual void OnProcessingError(System.Exception exception)
     {
-        Debug.LogError($"× Processing error: {exception.Message}");
+        Debug.LogError($"Processing error: {exception.Message}");
         
         // TODO: Handle errors
-        // Examples:
-        // - Show error UI to user
-        // - Retry mechanism
-        // - Fallback behavior
-        // - Send error telemetry
     }
     
     /// <summary>
