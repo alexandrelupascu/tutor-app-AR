@@ -1,0 +1,37 @@
+# Unity text assets
+*.asmdef text
+*.asset text
+*.meta text
+*.prefab text
+*.unity text
+*.mat text
+*.anim text
+*.controller text
+
+# LFS for binary assets
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.tga filter=lfs diff=lfs merge=lfs -text
+
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.obj filter=lfs diff=lfs merge=lfs -text
+*.blend filter=lfs diff=lfs merge=lfs -text
+
+*.wav filter=lfs diff=lfs merge=lfs -text
+*.mp3 filter=lfs diff=lfs merge=lfs -text
+*.ogg filter=lfs diff=lfs merge=lfs -text
+
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.mov filter=lfs diff=lfs merge=lfs -text
+
+# Prevent Unity-generated files from being treated as text
+*.dll binary
+*.exe binary
+*.a binary
+*.lib binary
+*.so binary
+*.apk binary
+*.aab binary
+
